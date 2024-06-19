@@ -6,7 +6,7 @@ This repository contains the backend code for the LearnSwift application, compil
 
 You can download the executable JAR file from the following link:
 
-[Download LearnSwiftH2Backend.jar](https://drive.google.com/file/d/1Y9d93OolDy_R7sTTfSC-Ae1Lypqngm7I/view?usp=drive_link)
+[Download LearnSwiftH2Backend.jar](https://drive.google.com/file/d/1Y9d93OolDy_R7sTTfSC-Ae1Lypqngm7I/view?usp=sharing)
 
 ## How to Run
 
