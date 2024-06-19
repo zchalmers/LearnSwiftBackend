@@ -8,11 +8,10 @@ import com.zchalmers.LearnSwiftBackend.Repositories.Model.FoodRecipeRecord;
 import jakarta.annotation.PostConstruct;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
@@ -51,9 +50,12 @@ public class InputData {
         ArrayList<FoodCategoryRecord> categoryList = new ArrayList<>();
         ArrayList<FoodItemRecord> foodItemList = new ArrayList<>();
 
-        String fileName = "C:\\Users\\zchal\\CODING\\LearnSwiftBackend\\src\\main\\java\\com\\zchalmers\\LearnSwiftBackend\\Service\\data.txt"; // Change this to the path of your text file
+        String fileName = "data.txt"; // Change this to the path of your text file
+        ClassPathResource resource = new ClassPathResource(fileName);
+        try (InputStream inputStream = resource.getInputStream();
+             InputStreamReader streamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+             BufferedReader br = new BufferedReader(streamReader)) {
 
-        try (BufferedReader br = new BufferedReader(new FileReader(fileName, StandardCharsets.UTF_8))) {
             String line;
             FoodCategoryRecord current = null;
             while ((line = br.readLine()) != null) {
