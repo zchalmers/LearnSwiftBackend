@@ -1,29 +1,55 @@
-# LearnSwiftH2Backend
+# LearnSwift Backend Service
 
-This repository contains the backend code for the LearnSwift application, compiled with Java 17.
+A robust Spring Boot backend service designed to support the LearnSwift application. This service manages content delivery, file system interactions, and a structured data repository for educational content.
 
-## Download
+## Project Overview
+The LearnSwift Backend serves as the central API for the LearnSwift ecosystem. It provides endpoints for managing food-related data models (categories, items, and recipes) and includes a specialized file management system for handling application assets.
 
-You can download the executable JAR file from the following link:
+### Key Features
+- RESTful API Architecture: Built with Spring Boot for high performance and scalability.
+- Dual Database Support: Compatible with both H2 (for development) and MySQL (for production).
+- Role-Based Data Models: Structured repositories for Food Categories, Items, and Recipes.
+- File Management System: Dedicated controllers for file uploads and system interactions.
+- Spring Security: Integrated security layer for protected endpoints.
 
-[Download LearnSwiftH2Backend.jar](https://drive.google.com/file/d/1Y9d93OolDy_R7sTTfSC-Ae1Lypqngm7I/view?usp=sharing)
+## Technical Stack
+- Java: 17
+- Framework: Spring Boot 3.2.5
+- Build Tool: Gradle
+- Data Persistence: Spring Data JPA / Hibernate
+- Databases: MySQL 8, H2 (In-memory)
 
-## How to Run
+## Getting Started
+### Prerequisites
+- Java JDK 17
+- MySQL Server (optional, for production profile)
+- Gradle (included via gradlew)
 
-1. **Download**: 
-   - Download the `LearnSwiftH2Backend.jar` file from the link provided above.
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/zchalmers/LearnSwiftBackend.git
+   ```
+2. Configure the database in `src/main/resources/application.properties` (if using MySQL).
 
-2. **Open Terminal**:
-   - Open the terminal on your system.
+### Running the Application
+To run the application locally using the Gradle wrapper:
+```bash
+./gradlew bootRun
+```
 
-3. **Navigate to Download Location**:
-   - Navigate to the directory where you downloaded `LearnSwiftH2Backend.jar`.
+To build a standalone executable JAR:
+```bash
+./gradlew build
+```
+The resulting JAR will be located in `build/libs/`.
 
-4. **Run the JAR File**:
-   - Use the following command to run the JAR file:
-     ```bash
-     java -jar LearnSwiftH2Backend.jar
-     ```
+## API Endpoints
+- /api/food: Access categories, items, and recipes.
+- /api/files: Endpoint for file system operations and asset management.
 
-## Note
-- This application is compiled with Java 17.
+## Contributors
+- Zachary Chalmers (zchalmer@asu.edu)
+
+## Acknowledgments
+Developed as part of the LearnSwift educational project suite.
